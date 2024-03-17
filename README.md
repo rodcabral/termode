@@ -13,7 +13,7 @@ The terminal default behavior is blocking I/O and canonical mode. This means tha
 // Default
 termode_nonblocking(NONBLOCKING_OFF);
 
-// It doesn't interrupt your program, but it still has to wait for the Enter key to process the input.
+// It doesn't interrupt the program, but it still has to wait for the Enter key to process the input
 termode_nonblocking(NONBLOCKING_ON);
 ```
 #### Canonical mode
@@ -22,7 +22,7 @@ termode_nonblocking(NONBLOCKING_ON);
 // Default
 termode_canonical(CANONICAL_ON);
 
-// This doesn't interrupt your program and you don't have to wait for the Enter key to process the input.
+// It doesn't interrupt the program and you don't have to wait for the Enter key to process the input
 termode_canonical(CANONICAL_OFF);
 ```
 #### Echo
