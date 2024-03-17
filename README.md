@@ -10,16 +10,20 @@ The terminal default behavior is blocking I/O and canonical mode. This means tha
 #### Non-blocking
 
 ```c 
-termode_nonblocking(NONBLOCKING_OFF); // Default
+// Default
+termode_nonblocking(NONBLOCKING_OFF);
 
-termode_nonblocking(NONBLOCKING_ON); // It doesn't interrupt your program, but it still has to wait for the Enter key to process the input.
+// It doesn't interrupt your program, but it still has to wait for the Enter key to process the input.
+termode_nonblocking(NONBLOCKING_ON);
 ```
 #### Canonical mode
 
 ```c
-termode_canonical(CANONICAL_ON); // Default
+// Default
+termode_canonical(CANONICAL_ON);
 
-termode_canonical(CANONICAL_OFF); // This doesn't interrupt your program and you don't have to wait for the Enter key to process the input.
+// This doesn't interrupt your program and you don't have to wait for the Enter key to process the input.
+termode_canonical(CANONICAL_OFF);
 ```
 #### Echo
 
