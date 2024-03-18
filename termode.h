@@ -50,17 +50,17 @@ void termode_canonical(int mode) {
 void termode_echo(int mode) {
     if(mode != ECHO_OFF && mode != ECHO_ON) return;
 
+    tcgetattr(STDIN_FILENO, &new_term);
+
     if(mode == ECHO_OFF) {
-        tcgetattr(STDIN_FILENO, &new_term);
         new_term.c_lflag &= ~ECHO;
-        tcsetattr(STDIN_FILENO, TCSANOW, &new_term);
     }
 
     if(mode == ECHO_ON) {
-        tcgetattr(STDIN_FILENO, &new_term);
         new_term.c_lflag |= ECHO;
-        tcsetattr(STDIN_FILENO, TCSANOW, &new_term);
     }
+
+    tcsetattr(STDIN_FILENO, TCSANOW, &new_term);
 }
 
 #endif
