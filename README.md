@@ -1,8 +1,8 @@
 ## Termode
 
-Handle terminal non-blocking I/O and canonical/non-canonical mode more easily (header-only)
+Header-only library to easily manage terminal mode (non-blocking I/O, canonical/non-canonical mode)
 
-The terminal default behavior is blocking I/O and canonical mode. This means that if you have a loop in your program and need user input, your program will stop until the Enter key is pressed.
+The default behavior of the terminal is blocking I/O and has canonical mode enabled by default.
 
 ```c
 #include <termode.h>
@@ -13,7 +13,7 @@ The terminal default behavior is blocking I/O and canonical mode. This means tha
 // Default
 termode_nonblocking(NONBLOCKING_OFF);
 
-// It doesn't interrupt the program, but it still has to wait for the Enter key to process the input
+// Doesn't interrupt the program, but it still has to wait for the Enter key to process the input
 termode_nonblocking(NONBLOCKING_ON);
 ```
 #### Canonical mode
@@ -22,7 +22,7 @@ termode_nonblocking(NONBLOCKING_ON);
 // Default
 termode_canonical(CANONICAL_ON);
 
-// It doesn't interrupt the program and you don't have to wait for the Enter key to process the input
+// Doesn't interrupt the program and don't have to wait for the Enter key to process the input
 termode_canonical(CANONICAL_OFF);
 ```
 #### Echo
