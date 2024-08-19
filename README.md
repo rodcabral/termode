@@ -3,6 +3,7 @@
 Header-only library to easily manage terminal mode (non-blocking I/O, canonical/non-canonical mode)
 
 ```c
+#define TERMODE_IMPLEMENTATION
 #include <termode.h>
 ```
 #### Non-blocking
