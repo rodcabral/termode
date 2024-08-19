@@ -14,6 +14,11 @@
 #define ECHO_OFF 0
 #define ECHO_ON 1
 
+void termode_nonblocking(int mode);
+void termode_canonical(int mode);
+void termode_echo(int mode);
+
+#ifdef TERMODE_IMPLEMENTATION
 struct termios new_term, old_term;
 
 void termode_nonblocking(int mode) {
@@ -63,4 +68,5 @@ void termode_echo(int mode) {
     tcsetattr(STDIN_FILENO, TCSANOW, &new_term);
 }
 
-#endif
+#endif // TERMODE_IMPLEMENTATION
+#endif // _TERMODE_H_
